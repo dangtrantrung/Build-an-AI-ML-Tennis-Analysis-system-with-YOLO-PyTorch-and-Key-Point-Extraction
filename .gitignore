@@ -7,5 +7,5 @@
 /AIenv/pyvenv.cfg
 /runs
 /AIenv/yolov8x.pt
-/AIenv/trainning
+/AIenv/trainning/data
 /AIenv/models
