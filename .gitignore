@@ -1,0 +1,11 @@
+/AIenv/input_videos
+/AIenv/output_videos
+/AIenv/Lib
+/AIenv/Include
+/AIenv/Scripts
+/AIenv/share
+/AIenv/pyvenv.cfg
+/runs
+/AIenv/yolov8x.pt
+/AIenv/trainning
+/AIenv/models
