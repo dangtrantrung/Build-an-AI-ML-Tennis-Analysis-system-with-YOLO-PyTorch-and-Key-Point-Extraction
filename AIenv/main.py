@@ -8,7 +8,10 @@ def main():
     video_frames=read_video(input_video_path)
     # detecting players - persons
     player_tracker=PlayerTracker(model_path='yolov8x')
-    player_detections=player_tracker.detect_frames(video_frames)
+    player_detections=player_tracker.detect_frames(video_frames,
+                                                   read_from_stub=False,
+                                                   stub_path='tracker_stubs/player_detections.pkl'
+                                                    )
     # Draw output
         # Draw Player Bounding boxes
     output_video_frames=player_tracker.draw_bboxes(video_frames,player_detections)
