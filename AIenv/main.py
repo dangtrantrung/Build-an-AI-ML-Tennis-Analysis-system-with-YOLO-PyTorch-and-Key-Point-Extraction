@@ -1,6 +1,7 @@
 from utils import read_video, save_video
 from trackers import PlayerTracker, BallTracker
 from court_line_detector import CourtLineDetector
+import cv2
 def main():
     #print("hello,world")
     # read video frames
@@ -29,6 +30,9 @@ def main():
     output_video_frames=player_tracker.draw_bboxes(video_frames,player_detections)
     output_video_frames=ball_tracker.draw_bboxes(video_frames,ball_detections)
     output_video_frames=court_line_detector.draw_keypoints_on_video(output_video_frames,court_keypoints)
+    # Draw frame number
+    for i,frame in enumerate(output_video_frames):
+        cv2.putText(frame,f'Frame number: {i}',(10,30),cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
 
     save_video(output_video_frames,'output_videos/output_video.avi')
 if __name__=='__main__':
